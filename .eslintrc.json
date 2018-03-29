@@ -36,6 +36,7 @@
             "error",
             2
         ],
+        "no-console": "off",
         "indent": [
             "error",
             2

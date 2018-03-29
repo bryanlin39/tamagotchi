@@ -4,7 +4,7 @@ import PropTypes from 'prop-types';
 function Attribute(props) {
   return (
     <div>
-      <p>{props.attribute}: {props.level}</p>
+      <p>{props.attribute[0].toUpperCase() + props.attribute.slice(1)}: {props.level}</p>
       <style jsx>{`
         p {
           color: ${props.color};

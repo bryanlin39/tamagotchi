@@ -1,6 +1,5 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { v4 } from 'uuid';
 
 function NewForm(props) {
 
@@ -8,7 +7,7 @@ function NewForm(props) {
 
   function handleCreateNewTamagotchi(event) {
     event.preventDefault();
-    props.onNewTamagotchi({name: _name.value, id: v4()});
+    props.onNewTamagotchi({name: _name.value, attributes: {food: 23, happiness: 100, rest: 54}});
     _name.value = '';
   }
 

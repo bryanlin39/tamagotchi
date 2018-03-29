@@ -16,20 +16,21 @@ function HealthDashboard(props) {
 
   return (
     <div>
-      <h3>Health</h3>
+      <h3>{props.name}</h3>
       {Object.keys(props.attributeLevels).map((attribute, index) => {
         let levelColor = setLevelColor(props.attributeLevels[attribute]);
         return <Attribute
           attribute={attribute}
           level={props.attributeLevels[attribute]}
           color={levelColor}
-          key={index}/>
+          key={index}/>;
       })}
     </div>
   );
 }
 
 HealthDashboard.propTypes = {
+  name: PropTypes.string,
   attributeLevels: PropTypes.object.isRequired
 };
 

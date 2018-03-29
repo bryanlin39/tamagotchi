@@ -8,8 +8,8 @@ function Collection(props) {
       <h3>Tamagotchi Collection</h3>
       <NewForm onNewTamagotchi={props.onNewTamagotchi}/>
       <ul>
-        {props.collection.map((tamagotchi) =>
-          <li key={tamagotchi.id}>{tamagotchi.name}</li>
+        {Object.keys(props.collection).map((tamagotchiId) =>
+          <li key={tamagotchiId} onClick={() => {props.onSelectedTamagotchi(tamagotchiId);}}>{props.collection[tamagotchiId].name}</li>
         )}
       </ul>
     </div>
@@ -17,8 +17,9 @@ function Collection(props) {
 }
 
 Collection.propTypes = {
-  collection: PropTypes.array,
-  onNewTamagotchi: PropTypes.func
+  collection: PropTypes.object,
+  onNewTamagotchi: PropTypes.func,
+  onSelectedTamagotchi: PropTypes.func
 };
 
 export default Collection;
